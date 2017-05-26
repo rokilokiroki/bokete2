@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: bokete2_production
-  username: bokete2
-  password: <%= ENV['BOKETE2_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
