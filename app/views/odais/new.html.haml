@@ -1,0 +1,11 @@
+#wrapper.clearfix
+  #container.clearfix
+    .main-container.clearfix
+      .main-container__content
+        .main-container__content-title
+          %span.fa.fa-picture-o
+          お題を投稿する。
+        .main-container_content
+          = form_for @odai do |f|
+            = f.file_field :image
+            = f.submit "send"

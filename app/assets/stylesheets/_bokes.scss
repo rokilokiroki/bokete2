@@ -1,0 +1,300 @@
+.fixed {
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 100000 !important;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0 auto 10px;
+    padding-top: 45px;
+    background-color: #f2efed;
+    position: relative;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#top-bar {
+    background-color: #fff;
+    height: 45px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #666;
+    display: block;
+    &__navi {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    ul li {
+        list-style-type: none;
+        display: inline-block;
+    }
+    .name h1 a {
+        padding: 0 20px 0 0;
+    }
+}
+
+.title-area {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 img {
+    width: 135px;
+    height: 40px;
+    margin-bottom: -7px;
+}
+
+.top-bar-section {
+    ul li a {
+        height: 45px;
+        display: block;
+        font-weight: bold;
+        padding: 12px 14px;
+        color: #111;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    &__left {
+        float: left;
+    }
+    &__right {
+        &__img {
+            float: left;
+        }
+        float: right;
+        img {
+            display: inline;
+            margin-right: 1px;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #d4cac4;
+            vertical-align: middle;
+        }
+    }
+}
+
+#header-news {
+    font-size: 12px;
+    margin: 14px 0;
+    padding: 0;
+    width: 100%;
+    &__catch {
+        float: left;
+    }
+    &__status {
+        float: right;
+    }
+}
+
+.main-container {
+    width: 660px;
+    padding: 0;
+    margin: 35px 10px 20px 220px;
+    float: left;
+    &__menu {
+        width: 640px;
+        height: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        &__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            li {
+                padding: 0;
+                margin: 0 1em 0 0;
+                display: block;
+                float: left;
+            }
+        }
+    }
+    &__content {
+        width: 660px;
+    overflow: hidden;
+        &-title {
+            border-bottom: 2px solid #f4c536;
+            color: #222;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding-bottom: 2px;
+            margin-bottom: 1.8em;
+        }
+        &-text {
+            text-align: center;
+            .btn-long {
+                width: 400px;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #f4c536;
+                border-color: #f3be1e;
+            }
+            .btn {
+                display: inline-block;
+                margin-bottom: 0;
+                font-weight: bold;
+                text-align: center;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                white-space: nowrap;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                border-radius: 4px;
+            }
+        }
+        &-attention {
+            border-bottom: 2px solid #f4c536;
+            color: #222;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding-bottom: 2px;
+            margin-bottom: 1.8em;
+        }
+        &-horizon {
+            float: left;
+            width: 200px;
+            height: 100%;
+            margin: 20px 5px 20px 0;
+            .photo-text {
+                font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+                margin: 5px;
+                text-align: center;
+                font-weight: bold;
+                word-break: break-all;
+            }
+            &-photo {
+                display: block;
+                height: 128px;
+                width: 200px;
+                text-align: center;
+                img {
+                    margin-bottom: 5px;
+                    max-height: 128px;
+                    max-width: 200px;
+                    width: auto;
+                }
+            }
+        }
+        &-boke {
+            margin: 20px auto 30px;
+            width: 610px;
+            border-bottom: 1px solid #eee;
+            &_text {
+                font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+                width: 500px;
+                margin: 10px auto 10px;
+                font-size: 36px;
+                text-align: center;
+                line-height: 1.2;
+                word-break: break-all;
+            }
+            &_photo {
+                text-align: center;
+                margin: 0 auto 10px;
+                font-size: 13px;
+                color: #000;
+                padding: 0;
+                &-content {
+                    display: inline-block;
+                    a {
+                        cursor: pointer;
+                        color: #2b6bc3;
+                        text-decoration: none;
+                        img {
+                            margin-bottom: 5px;
+                            max-height: 350px;
+                            border: 1px solid #999;
+                        }
+                    }
+                    &-meta {
+                        text-align: right;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        a {
+                            cursor: pointer;
+                            color: #2b6bc3;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            &-about {
+                &-information {
+                    margin: 10px auto;
+                    width: 480px;
+                    &-boke-stars {
+                        display: block;
+                        color: #333;
+                        font-weight: bold;
+                        font-size: 17px;
+                        padding: 0;
+                        margin: 0 5px;
+                        margin-left: 28px;
+                        width: 7em;
+                        float: left;
+                        a {
+                            border-radius: 5px;
+                            padding: 2px 0 3px;
+                            border: 1px solid #c6c6c6;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            color: #000;
+                            i {
+                                display: inline-block;
+                                font-size: inherit;
+                                text-rendering: auto;
+                                -webkit-font-smoothing: antialiased;
+                            }
+                        }
+                    }
+                    &-label {
+                        margin: 0 5px;
+                        width: auto;
+                        display: inline-block;
+                        float: left;
+                        background-color: #c6c6c6;
+                        a {
+                            display: block;
+                            padding: 5px 10px;
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                    }
+                    &-social {
+                        margin: 0 5px;
+                        width: 36px;
+                        text-align: center;
+                        display: block;
+                        float: left;
+                    }
+                }
+                &-inforamation2 {
+                    margin: 10px auto;
+                    text-align: center;
+                    &-element {
+                        unicode-bidi: bidi-override;
+                        direction: rtl;
+                        font-size: 20px;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}

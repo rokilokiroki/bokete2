@@ -1,0 +1,30 @@
+#wrapper.clearfix
+  #container.clearfix
+    .main-container.clearfix
+      .main-container__menu
+        %ul.main-container__menu__list
+          %li.main-container__menu__list_active
+            %a{:href => "", :target => "_self"}マイページ
+          %li
+            %a{:href => "", :target => "_self"}設定
+          %li
+            = link_to "お題投稿", new_odai_path, method: :get
+    .main-container__content
+      .main-container__content-center
+        .main-container__content-center-category
+          %label.main-container__content-center-category-element
+            %a{:href => "/odai"} 全カテゴリ
+        .main-container__content-center-category
+          %label.main-container__content-center-category-element
+            %a{:href => "/odai"}  人物像
+        .main-container__content-center-category
+          %label.main-container__content-center-category-element
+            %a{:href => "/odai"} ありがとうございます！
+        .main-container__content-center-category
+          %label.main-container__content-center-category-element
+            %a{:href => "/odai"} すいません
+        .main-container__content-center-category
+          %label.main-container__content-center-category-element
+            %a{:href => "/odai"} その他
+      .odai-list
+        = render partial: "pin", collection: @odais, as: :odai

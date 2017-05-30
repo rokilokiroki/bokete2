@@ -1,0 +1,11 @@
+#wrapper.clearfix
+  #container.clearfix
+    .main-container.clearfix
+      .main-container__menu
+        %ul.main-container__menu__list
+          %li.main-container__menu__list_active
+            %a{:href => "", :target => "_self"}マイページ
+          %li
+            %a{:href => "", :target => "_self"}設定
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete

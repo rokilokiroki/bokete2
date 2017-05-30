@@ -1,0 +1,38 @@
+#wrapper
+  #container
+    .main-container
+      .main-container__content
+        .main-container__content-title
+          ボケてアカウント新規登録
+        %p.main-container__content-text2
+          ボケてでは色々な人に「ボケて」もらって「評価」してもらいたいと思っています。投稿したボケが、誰かの辛い時間を楽しい時間に変えることもできるし、面白い！と思うボケにコメントしたことがボケ投稿者をハッピーにすることが出来ます。
+        %p.main-container__content-text2
+          ボケては完全に無料で利用でき、アカウントを作成すればPCサイトだけでなくスマホサイトやiOSアプリ、Androidアプリでも楽しめます。ボケてに登録してみんなを楽しい気持ちにしてください。
+
+        .main-container__content-login
+          .main-container__content-login-form
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .field
+                .field-label
+                  = f.label :name
+                .field-input
+                  = f.text_field :name, autofocus: true
+              .field
+                .field-label
+                  = f.label :email
+                .field-input
+                  = f.email_field :email
+              .field
+                .field-label
+                  = f.label :password
+                  %i (英数字8文字以上)
+                .field-input
+                  = f.password_field :password, autocomplete: "off"
+              .field
+                .field-label
+                  = f.label :password_confirmation
+                .field-input
+                  = f.password_field :password_confirmation, autocomplete: "off"
+              .actions
+                = f.submit "submit", class: 'btn'

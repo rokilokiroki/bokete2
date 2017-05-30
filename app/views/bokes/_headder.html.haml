@@ -1,0 +1,35 @@
+.fixed
+  #top-bar
+    #top-bar__navi
+      %ul.title-area
+        %li.title-area__name
+          %h1
+            = link_to root_path do
+              = image_tag 'logo.png'
+      .top-bar-section
+        %ul.top-bar-section__left
+          %li
+            %a{:href => "", :target => "_self"}ボケ
+          %li
+            = link_to "お題", odais_path, method: :get
+          %li
+            %a{:href => "", :target => "_self"}職人
+        %ul.top-bar-section__right
+          .top-bar-section__right__img
+            = link_to root_path do
+              = image_tag "user_img.gif"
+          - if user_signed_in?
+            %li
+              %a{:href => "", :target => "_self"}
+                #{current_user.name}
+            %li
+              %a{:href => "/users/#{current_user.id}", :target => "_self"}マイページ
+            %li
+              %a{:href => "", :target => "_self"}ヘルプ
+          - else
+            %li
+              %a{:href => "", :target => "_self"}新規登録
+            %li
+              %a{:href => "", :target => "_self"}ログイン
+            %li
+              %a{:href => "", :target => "_self"}ヘルプ
