@@ -1,3 +1,37 @@
-// Place all the styles related to the odais controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container__content-center {
+    text-align: center;
+    &-category {
+        display: inline-block;
+        margin: 0 auto 20px;
+        &-element {
+            background-color: #c6c6c6;
+            border-color: #fff;
+            float: left;
+        }
+    }
+}
+
+.odai-list {
+    margin: 0 -8px;
+    .pin {
+        margin: 15px;
+        .odai-inner {
+            margin: 65px 0px 100px 30px;
+            width: 300px;
+            .odai-photo-wrapper {
+                .odai-photo {
+                    img {
+                        width: 100%;
+                    }
+                }
+                .odai-meta {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.clearfix{
+  @include clearfix();
+}
