@@ -4,3 +4,11 @@
       .main-container__content
         .main-container__content-title
           ボケを投稿する。
+        .main-container__content-boke
+          .main-container__content-boke-photo
+            .main-container__content-boke-photo-content
+              %img{:alt => "", :src => "#{@odai.image.url}"}
+              = form_for [@odai, @bokete] do |f|
+                = f.label :ボケテキスト
+                = f.text_area :body, placeholder: "グループ名を入力してください"
+                = f.submit

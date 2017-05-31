@@ -27,4 +27,8 @@
           %label.main-container__content-center-category-element
             %a{:href => "/odai"} その他
       .odai-list
-        = render partial: "pin", collection: @odais, as: :odai
+        - @odais.each do |odai|
+          = render partial: "pin", locals: { odai: odai}
+          / 一個のインスタンスのidをlink_to new_odai_boke_path()にぶちこみたいのでeach文で回して一個のインスタンスとしている。pictweetと同じ原理。部分テンプレートで複数表示しているのでfind(params[:group_id])では一個しか持ってこれない書き方なのでIDをとってこれなかった。link_to new_odai_boke_path(odai)となった。
+
+        =# render partial: "pin", collection: @odais, as: :odai
