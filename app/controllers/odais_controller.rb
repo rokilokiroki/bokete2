@@ -9,14 +9,14 @@ class OdaisController < ApplicationController
   end
 
   def create
-    @odai = current_user.odais.new(post_params)
+    @odai = current_user.odais.new(odai_params)
     if @odai.save
     else
       render :new
     end
   end
 
-  def post_params
+  def odai_params
     params.require(:odai).permit(:image)
   end
 

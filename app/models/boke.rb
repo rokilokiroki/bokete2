@@ -1,5 +1,5 @@
 class Boke < ApplicationRecord
- belongs_to :users
+ belongs_to :user
  belongs_to :odai
- has_many :comment
+ has_many :comments
 end
