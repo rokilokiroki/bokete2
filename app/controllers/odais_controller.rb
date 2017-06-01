@@ -11,6 +11,7 @@ class OdaisController < ApplicationController
   def create
     @odai = current_user.odais.new(odai_params)
     if @odai.save
+      redirect_to :root
     else
       render :new
     end
