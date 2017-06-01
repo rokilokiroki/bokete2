@@ -2,7 +2,7 @@
   .odai-inner
     .odai-photo-wrapper
       = link_to new_odai_boke_path(odai), method: :get, class: "odai-photo" do
-        = image_tag odai.image if odai.image
+        = image_tag odai.image.url if odai.image.url
       .odai-meta
         = link_to root_path do
           %span.fa.fa-camera{:title => "photo by"}
