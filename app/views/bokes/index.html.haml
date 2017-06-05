@@ -3,7 +3,7 @@
     .main-container.clearfix
       .main-container__menu
         %ul.main-container__menu__list
-          %li.main-container__menu__list_active
+          %li.active
             %a{:href => "", :target => "_self"}トップ
           %li
             %a{:href => "", :target => "_self"}注目
@@ -15,44 +15,11 @@
             %a{:href => "", :target => "_self"}セレクト
           %li
             %a{:href => "", :target => "_self"}殿堂入り
-      .main-container__content
-        .main-container__content-title
-          人気ボケ
-        .main-container__content-boke
-          .main-container__content-boke_photo
-            .main-container__content-boke_photo-content
-              = link_to root_path do
-                = image_tag '996d825be7d6579203a5531985a319e5_600.jpg'
-              .main-container__content-boke_photo-content-meta
-                %a{:href => "", :target => "_self"}投稿者
-          %h3.main-container__content-boke_text あああああ
-          .main-container__content-boke-about
-            .main-container__content-boke-about-information
-              .main-container__content-boke-about-information-boke-stars
-                = link_to root_path do
-                  %i.fa.fa-star 9526
-              .main-container__content-boke-about-information-label
-                %a{:href => "", :target => "_self"}2日くらい前
-              %span.main-container__content-boke-about-information-social
-                = link_to root_path do
-                  %i.fa.fa-facebook.fa-2x
-              %span.main-container__content-boke-about-information-social
-                = link_to root_path do
-                  %i.fa.fa-twitter.fa-2x
-              %span.main-container__content-boke-about-information-social
-                = link_to root_path do
-                  %i.fa.fa-warning.fa-2x
-              %span.main-container__content-boke-about-information-social
-                = link_to root_path do
-                  %i.fa.fa-external-link.fa-2x
-            .main-container__content-boke-about-information2
-              %span.main-container__content-boke-about-information2-rate-element
-                = link_to root_path do
-                  %i.fa.fa-star-o.fa-lg
-                = link_to root_path do
-                  %i.fa.fa-star-o.fa-lg
-        %p.main-container__content-text
-          %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる
+      %ul.main-container__content
+        %li.top
+          = render 'top'
+        %li.attention
+          = render 'attention'
         .main-container__content-attention
           注目ボケ
         = render 'horizon'

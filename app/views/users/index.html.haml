@@ -1,0 +1,55 @@
+#wrapper.clearfix
+  #container.clearfix
+    .main-container.clearfix
+      .main-container__menu
+        %ul.main-container__menu__list
+          %li.active
+            %a{:href => "", :target => "_self"}プロフィール
+          %li
+            %a{:href => "", :target => "_self"}投稿ボケ
+          %li
+            %a{:href => "", :target => "_self"}投稿お題
+          %li
+            %a{:href => "", :target => "_self"}お気に入り職人
+          %li
+            %a{:href => "", :target => "_self"}ボケコレ
+      %ul.main-container__content
+        .main-container__content-user-info
+          .main-container__content-user-info-photo
+            %img{:alt => "", :src => "/assets/user2_img.gif"}/
+          .main-container__content-user-info-profile
+            .main-container__content-user-info-profile-title
+            %table.table
+              %tbody
+                %tr
+                  %td{:width => "120"}
+                    %i.fa.fa-check
+                    ボケてID
+                  %td
+                    Roki2345
+                %tr
+                  %td
+                    %i.fa.fa-user
+                    性別
+                  %td
+                    男性
+                  %tr
+                    %td
+                      %i.fa.fa-star
+                        星の合計
+                    %td
+                      ボケ投稿数
+                %tr
+                  %td
+                    %i.fa.fa-picture-o
+                      お題投稿数
+                  %td
+                    0
+                %tr
+                  %td
+                    %i.fa.fa-pencil
+                      プロフィール
+                  %td
+                    なし
+
+

@@ -1,6 +1,7 @@
 class BokesController < ApplicationController
   def index
-
+    # @odai = Odai.find(params[:odai_id])
+    # @boke = Boke.find(params[:boke_id])
   end
   def new
     @odai = Odai.find(params[:odai_id])

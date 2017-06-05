@@ -20,8 +20,7 @@
               = image_tag "user_img.gif"
           - if user_signed_in?
             %li
-              %a{:href => "", :target => "_self"}
-                #{current_user.name}
+              = link_to "#{current_user.name}", users_path(current_user.id), method: :get
             %li
               %a{:href => "/users/#{current_user.id}", :target => "_self"}マイページ
             %li

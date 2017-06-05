@@ -6,6 +6,7 @@
           %span.fa.fa-picture-o
           お題を投稿する。
         .main-container_content
+          .preview
           = form_for @odai do |f|
             = f.file_field :image
             = f.submit "send"

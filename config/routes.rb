@@ -7,5 +7,5 @@ Rails.application.routes.draw do
       end
     end
   resources :odais
-  resources :users, only: [:show]
+  resources :users
 end

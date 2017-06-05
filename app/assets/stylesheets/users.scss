@@ -1,3 +1,56 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container__content-text2 {
+    margin: 0 0 10px;
+}
+
+.main-container__content-login {
+    text-align: center;
+    background-color: #eee;
+    border-radius: 10px;
+    &-form {
+        padding: 20px 0 40px;
+        width: 600px;
+        margin: auto;
+    }
+}
+
+.main-container__content-user-info-photo {
+    float: left;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 30px;
+    img {
+        height: 180px;
+        width: 180px;
+        margin: 20px 0 10px;
+        border: 3px solid #eee;
+        border-radius: 180px;
+    }
+}
+
+.main-container__content-user-info-profile {
+    float: right;
+    width: 400px;
+    &-title {
+        font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+        font-size: 18px;
+        margin: 10px 0;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        tobdy {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+            td {
+                padding: 8px;
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid
+            }
+        }
+    }
+}
