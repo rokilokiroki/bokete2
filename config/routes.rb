@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root 'bokes#index'
     resources :odais do
       resources :bokes do
-        resources :comments, only: [:create]
+          resources :comments, only: [:create]
       end
     end
-  resources :odais
-  resources :users
 end
