@@ -13,7 +13,7 @@ class BokesController < ApplicationController
     boke_id = bokes.first[0].to_i
     @boke = Boke.find(boke_id)
     @odai = @boke.odai
-    # @test = odai_id.map{|id| Odai.find(id)}[0].id
+    @star = @boke.comments.sum(:rate)
 
   end
   def new
