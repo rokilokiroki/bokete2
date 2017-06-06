@@ -3,11 +3,11 @@
 .main-container__content-boke
   .main-container__content-boke_photo
     .main-container__content-boke_photo-content
-      = link_to root_path do
-        = image_tag '996d825be7d6579203a5531985a319e5_600.jpg'
+      = image_tag(@odai.image)
       .main-container__content-boke_photo-content-meta
         %a{:href => "", :target => "_self"}投稿者
-  %h3.main-container__content-boke_text あああああ
+  %h3.main-container__content-boke_text
+    = @boke.body
   .main-container__content-boke-about
     .main-container__content-boke-about-information
       .main-container__content-boke-about-information-boke-stars
@@ -29,29 +29,29 @@
           %i.fa.fa-external-link.fa-2x
     .main-container__content-boke-about-information2
       %span.main-container__content-boke-about-information2-rate-element
-        / = form_tag("/odais/#{@odai.id}/bokes/#{@boke.id}/review/new", method: :post) do
-        .evaluation
-          %input#star1{:name => "star", :type => "radio", :value => "5"}/
-          %label{:for => "star1"}
-            %span.text> 最高
-            ★
-          %input#star2{:name => "star", :type => "radio", :value => "4"}/
-          %label{:for => "star2"}
-            %span.text> 良い
-            ★
-          %input#star3{:name => "star", :type => "radio", :value => "3"}/
-          %label{:for => "star3"}
-            %span.text> 普通
-            ★
-          %input#star4{:name => "star", :type => "radio", :value => "2"}/
-          %label{:for => "star4"}
-            %span.text> 悪い
-            ★
-          %input#star5{:name => "star", :type => "radio", :value => "1"}/
-          %label{:for => "star5"}
-            %span.text> 最悪
-            ★
-          %input{:type => "submit", :value => "SENT"}/
+        = form_tag("/odais/#{@odai.id}/bokes/#{@boke.id}/comments", method: :post) do
+          .evaluation
+            %input#star1{:name => "rate", :type => "radio", :value => "5"}/
+            %label{:for => "star1"}
+              %span.text> 最高
+              ★
+            %input#star2{:name => "rate", :type => "radio", :value => "4"}/
+            %label{:for => "star2"}
+              %span.text> 良い
+              ★
+            %input#star3{:name => "rate", :type => "radio", :value => "3"}/
+            %label{:for => "star3"}
+              %span.text> 普通
+              ★
+            %input#star4{:name => "rate", :type => "radio", :value => "2"}/
+            %label{:for => "star4"}
+              %span.text> 悪い
+              ★
+            %input#star5{:name => "rate", :type => "radio", :value => "1"}/
+            %label{:for => "star5"}
+              %span.text> 最悪
+              ★
+            %input{:type => "submit", :value => "SENT"}/
 
 %p.main-container__content-text
   %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる

@@ -1,7 +1,20 @@
 class BokesController < ApplicationController
   def index
-    # @odai = Odai.find(params[:odai_id])
-    # @boke = Boke.find(params[:boke_id])
+    hash = {}
+    Boke.all.each do |boke|
+      boke_id = boke.id
+      average = boke.comments.average(:rate).to_i
+      hash["#{boke_id}"] = average
+    end
+
+    bokes = Hash[ hash.sort_by{ |_, v| -v }]
+    # @odai = Odai.includes(:user).order("created_at DESC").first
+    # limit(1)だと取り出した時に配列になっていて、うまくidとかが取り出せなかったのでfirstになった。
+    boke_id = bokes.first[0].to_i
+    @boke = Boke.find(boke_id)
+    @odai = @boke.odai
+    # @test = odai_id.map{|id| Odai.find(id)}[0].id
+
   end
   def new
     @odai = Odai.find(params[:odai_id])
