@@ -28,6 +28,21 @@
 }
 .evaluation label:hover,
 .evaluation label:hover ~ label,
-.evaluation input[type='radio']:checked ~ label{
+.evaluation input[type='radio']:checked ~ label
+{
   color: #ffcc00;
+}
+.boke_text{
+    margin-left: 192px;
+    display: none;
+}
+.new_text{
+    margin-left: 192px;
+    display: none;
+}
+#button{
+  display: none;
+}
+#button2{
+  display: none;
 }

@@ -1,7 +1,7 @@
 class OdaisController < ApplicationController
 
   def index
-    @odais = Odai.includes(:user).order("created_at DESC")
+    @odais = Odai.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new

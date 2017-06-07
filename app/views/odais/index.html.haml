@@ -11,26 +11,7 @@
             %a{:href => "", :target => "_self"}設定
           %li
             = link_to "お題投稿", new_odai_path, method: :get
-    .main-container__content
-      .main-container__content-center
-        .main-container__content-center-category
-          %label.main-container__content-center-category-element
-            %a{:href => "/odai"} 全カテゴリ
-        .main-container__content-center-category
-          %label.main-container__content-center-category-element
-            %a{:href => "/odai"}  人物像
-        .main-container__content-center-category
-          %label.main-container__content-center-category-element
-            %a{:href => "/odai"} ありがとうございます！
-        .main-container__content-center-category
-          %label.main-container__content-center-category-element
-            %a{:href => "/odai"} すいません
-        .main-container__content-center-category
-          %label.main-container__content-center-category-element
-            %a{:href => "/odai"} その他
-      .odai-list
-        - @odais.each do |odai|
-          = render partial: "pin", locals: { odai: odai}
-          / 一個のインスタンスのidをlink_to new_odai_boke_path()にぶちこみたいのでeach文で回して一個のインスタンスとしている。pictweetと同じ原理。部分テンプレートで複数表示しているのでfind(params[:group_id])では一個しか持ってこれない書き方なのでIDをとってこれなかった。link_to new_odai_boke_path(odai)となった。
-
-        =# render partial: "pin", collection: @odais, as: :odai
+      .main-container__content
+        .odai-list
+          - @odais.each do |odai|
+            = render partial: "pin", locals: { odai: odai}
