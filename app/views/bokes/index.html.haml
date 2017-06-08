@@ -27,3 +27,4 @@
           %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる
         .main-container__content-attention
           新着ボケ
+          = render partial: 'new_bokes', collection: @new_bokes, as: :boke

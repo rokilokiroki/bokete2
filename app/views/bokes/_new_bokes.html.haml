@@ -1,6 +1,6 @@
 .main-container__content-horizon
   = link_to root_path, class: "main-container__content-horizon-photo" do
-    = image_tag rate.odai.image
+    = image_tag boke.odai.image
   .photo-meta
     = link_to root_path do
       %span.fa.fa-camera{:title => "photo by"}
@@ -9,10 +9,7 @@
       %span.fa.fa-picture-o{:title => "odai by"}
         音信不通
   .photo-text
-    = rate.body
+    = boke.body
   .rating
     %i.fa.fa-star.fa
-      #{rate.comments.sum(:rate)}
-
-
-
+      #{boke.comments.sum(:rate)}
