@@ -20,7 +20,8 @@
           %i.fa.fa-star
             0
       .main-container__content-boke-about-information-label
-        %a{:href => "", :target => "_self"}2日くらい前
+        %a.time_ago
+          = time_ago_in_words(@new_boke.created_at)
       %span.main-container__content-boke-about-information-social
         = link_to root_path do
           %i.fa.fa-facebook.fa-2x

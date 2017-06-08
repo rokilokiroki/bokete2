@@ -22,12 +22,8 @@
           = render 'new_boke'
         .main-container__content-attention
           注目ボケ
-        = render 'horizon'
+        = render partial: 'horizon', collection: @rates, as: :rate
         %p.main-container__content-text
           %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる
         .main-container__content-attention
           新着ボケ
-        = render 'horizon'
-
-
-

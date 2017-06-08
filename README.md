@@ -11,6 +11,7 @@
 Association
 * has_many :odais
 * has_many :bokete
+has_many :comments
 
 **bokes table**
 

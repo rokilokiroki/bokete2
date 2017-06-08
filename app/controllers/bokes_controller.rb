@@ -16,6 +16,8 @@ class BokesController < ApplicationController
     @new_boke = Boke.last
     @new_odai = @new_boke.odai
     @new_star = @new_boke.comments.sum(:rate)
+    rates =  Comment.group(:boke_id).order('count_rate DESC').count(:rate).keys
+    @rates = rates.map { |id| Boke.find(id) }
   end
 
   def new

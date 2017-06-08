@@ -20,7 +20,9 @@ html{
         - Fails on FF.
 */
 body,
-div,
+div{
+    padding-right: 13px;
+}
 dl,
 dt,
 dd,
