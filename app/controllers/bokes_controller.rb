@@ -9,16 +9,21 @@ class BokesController < ApplicationController
 
     bokes = Hash[ hash.sort_by{ |_, v| -v }]
     # limit(1)だと取り出した時に配列になっていて、うまくidとかが取り出せなかったのでfirstになった。
-    boke_id = bokes.first[0].to_i
-    @boke = Boke.find(boke_id)
-    @odai = @boke.odai
-    @star = @boke.comments.sum(:rate)
-    @new_boke = Boke.last
-    @new_odai = @new_boke.odai
-    @new_star = @new_boke.comments.sum(:rate)
-    rates =  Comment.group(:boke_id).order('count_rate DESC').limit(3).count(:rate).keys
-    @rates = rates.map { |id| Boke.find(id) }
-    @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
+    if bokes == {}
+      redirect_to odais_path
+
+    else
+      boke_id = bokes.first[0].to_i
+      @boke = Boke.find(boke_id)
+      @odai = @boke.odai
+      @star = @boke.comments.sum(:rate)
+      @new_boke = Boke.last
+      @new_odai = @new_boke.odai
+      @new_star = @new_boke.comments.sum(:rate)
+      rates =  Comment.group(:boke_id).order('count_rate DESC').limit(3).count(:rate).keys
+      @rates = rates.map { |id| Boke.find(id) }
+      @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
+    end
   end
 
   def new
