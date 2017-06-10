@@ -46,3 +46,34 @@
 #button2{
   display: none;
 }
+
+.evaluation2{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.evaluation2 input[type='radio']{
+  display: none;
+}
+.evaluation2 label{
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 20px;
+}
+.evaluation2 label .text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+}
+.evaluation2 label:hover,
+.evaluation2 label:hover ~ label,
+.evaluation2 input[type='radio']:checked ~ label
+{
+  color: #ffcc00;
+}

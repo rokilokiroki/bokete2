@@ -36,8 +36,21 @@ Association
 |user_id|integer|null: false|
 
 Assosiation
+* has_many :cards, through: odai_cards
+* has_many :odai_cards
 * belongs_to user
 * has_many boke
+
+**cards**
+
+|column|type|options|
+|:-:|:-:|:-:|
+
+Assosiation
+* has_many :odais, through: odai_cards
+* has_many boke
+* has_many :odai_cards
+
 
 **comments**
 

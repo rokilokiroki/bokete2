@@ -13,26 +13,53 @@
 
 .odai-list {
     margin: 0 -8px;
-    .pin {
-        margin: 15px;
-        .odai-inner {
-            margin: 65px 0px 100px 30px;
-            width: 300px;
-            .odai-photo-wrapper {
-                .odai-photo {
-                    img {
-                        width: 100%;
-                        max-height: 300px;
-                    }
+    margin: 15px;
+    .odai-inner {
+        margin: 0 0 20px 0;
+        padding: 0;
+        width: 300px;
+        border-bottom: 1px solid #eee;
+        .odai-photo-wrapper {
+            border: 1px #999 solid;
+            margin: 5px auto;
+            font-weight: bold;
+            .odai-photo {
+                img {
+                    width: 200px;
+                    margin: 50px;
                 }
-                .odai-meta {
-                    font-size: 12px;
-                }
+            }
+            .odai-meta {
+                font-size: 12px;
             }
         }
     }
 }
 
-.clearfix{
-  @include clearfix();
+.odai-hukusu-list {
+    margin: 0 -8px;
+    margin: 15px;
+    .odai-inner {
+        margin: 0 0 20px 0;
+        padding: 0;
+        width: 195px;
+        float: left;
+        .odai-photo-wrapper {
+            margin: 5px auto;
+            font-weight: bold;
+            .odai-photo {
+                img {
+                    width: 155px;
+                    margin: 50px;
+                }
+            }
+            .odai-meta {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.clearfix {
+    @include clearfix();
 }

@@ -6,12 +6,14 @@
           %li.active
             %a{:href => "", :target => "_self"}セレクト
           %li
-            %a{:href => "", :target => "_self"}マイページ
+            %a{:href => "", :target => "_self"}
+              複数セレクト
           %li
             %a{:href => "", :target => "_self"}設定
           %li
             = link_to "お題投稿", new_odai_path, method: :get
-      .main-container__content
-        .odai-list
-          - @odais.each do |odai|
-            = render partial: "pin", locals: { odai: odai}
+      %ul.main-container__content
+        %li.odai-list
+          = render partial: "pin", collection: @odais, as: :odai
+        %li.odai-hukusu-list.kakusu
+          = render partial: "hukusu", collection: @hukusu_odais, as: :odai

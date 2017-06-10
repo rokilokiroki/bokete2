@@ -2,6 +2,7 @@ class OdaisController < ApplicationController
 
   def index
     @odais = Odai.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @hukusu_odais = Odai.order("RAND()").limit(3)
   end
 
   def new

@@ -12,7 +12,7 @@ $(window).on("load", function(){
     $('.boke_text').show();
     $("#button").show();
   });
-    $('.evaluation input').on("click", function() {
+    $('.evaluation2 input').on("click", function() {
     $('.new_text').show();
     $("#button2").show();
   });

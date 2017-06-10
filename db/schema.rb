@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605100927) do
+ActiveRecord::Schema.define(version: 20170610104139) do
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "body",       null: false
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20170605100927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["body"], name: "index_bokes_on_body", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -30,6 +35,13 @@ ActiveRecord::Schema.define(version: 20170605100927) do
     t.integer  "rate"
     t.integer  "odai_id"
     t.index ["text"], name: "index_comments_on_text", using: :btree
+  end
+
+  create_table "odai_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "odai_id",    null: false
+    t.integer  "card_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "odais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
