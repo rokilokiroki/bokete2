@@ -55,6 +55,12 @@
               ★
           %textarea{:class => "boke_text", :cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
           %input#button{:type => "submit", :value => "SENT"}/
+.main-container__content-attention.clearfix
+  .main-container__content-title
+    注目ボケ
+  = render partial: 'horizon', collection: @rates, as: :rate
+.main-container__content-attention.clearfix
+  .main-container__content-title
+    新着ボケ
+  = render partial: 'new_bokes', collection: @new_bokes, as: :boke
 
-%p.main-container__content-text
-  %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる

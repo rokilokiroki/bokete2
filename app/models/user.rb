@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
  has_many :odais
  has_many :bokes
+ has_many :rensou_bokes
 end

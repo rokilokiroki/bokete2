@@ -23,10 +23,21 @@ has_many :comments
 
 Association
 * belongs_to :users
-* belongs_to odai
+* belongs_to :odai
+* belongs_to :card
 * has_many : comment
 
+**rensou_bokes table**
 
+|column|type|options|
+|:-:|:-:|:-:|
+|body|string|index: true, null: false|
+|user_id|integer|
+|card_id|integer|
+
+Association
+* belongs_to :users
+* belongs_to :card
 
 **odais**
 

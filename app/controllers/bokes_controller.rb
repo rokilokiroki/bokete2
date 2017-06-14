@@ -8,7 +8,7 @@ class BokesController < ApplicationController
     end
 
     bokes = Hash[ hash.sort_by{ |_, v| -v }]
-    # limit(1)だと取り出した時に配列になっていて、うまくidとかが取り出せなかったのでfirstになった。
+
     if bokes == {}
       redirect_to odais_path
 
@@ -23,6 +23,8 @@ class BokesController < ApplicationController
       rates =  Comment.group(:boke_id).order('count_rate DESC').limit(3).count(:rate).keys
       @rates = rates.map { |id| Boke.find(id) }
       @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
+      @rensou = RensouBoke.last
+      @rensou_cards = @rensou.card.odais
     end
   end
 
@@ -37,13 +39,16 @@ class BokesController < ApplicationController
       flash.now[:notice] = 'ボケの作成に成功'
       redirect_to :root
     else
+      @odai = Odai.find(params[:odai_id])
       flash.now[:notice] = 'ボケの作成にシッパイ'
       render :new
     end
   end
 
   private
+
   def boke_params
-      params.require(:boke).permit(:body).merge(odai_id: params[:odai_id])
+    params.require(:boke).permit(:body).merge(odai_id: params[:odai_id])
   end
+
 end

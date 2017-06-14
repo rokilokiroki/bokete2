@@ -8,7 +8,7 @@
           %li
             %a{:href => "", :target => "_self"}新着
           %li
-            %a{:href => "", :target => "_self"}人気
+            %a{:href => "", :target => "_self"}連想ボケ
           %li
             %a{:href => "", :target => "_self"}ピックアップ
           %li
@@ -20,13 +20,7 @@
           = render 'top'
         %li.new_boke.kakusu
           = render 'new_boke'
-        .main-container__content-attention.clearfix
-          .main-container__content-title
-            注目ボケ
-          = render partial: 'horizon', collection: @rates, as: :rate
-        %p.main-container__content-text
-          %a.btn-primary.btn.btn-long{:href => "/boke/popular"} もっとみる
-        .main-container__content-attention.clearfix
-          .main-container__content-title
-            新着ボケ
-          = render partial: 'new_bokes', collection: @new_bokes, as: :boke
+        %li.rensou_boke.kakusu
+          = render 'rensou'
+          / renderで別のコントローラーのviewファイルを指定しても、そのコントローラーの機能をまるごと持ってこれるわけではない。bokeのindexに今書いているのだからbokeコントローラーの機能が使われている。renderはただそこのviewをとってくるだけ。
+

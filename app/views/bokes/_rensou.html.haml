@@ -1,0 +1,28 @@
+.main-container__content-title
+  新着ボケ
+.main-container__content-boke
+  .main-container__content-boke_photo
+    .main-container__content-boke_photo-content
+      - @rensou_cards.each do |odai|
+        = image_tag(odai.image)
+      .main-container__content-boke_photo-content-meta
+        %a{:href => "", :target => "_self"}投稿者
+  %h3.main-container__content-boke_text
+    = @rensou.body
+  .main-container__content-boke-about
+    .main-container__content-boke-about-information
+      .main-container__content-boke-about-information-label
+        %a.time_ago
+          = time_ago_in_words(@rensou.created_at)
+      %span.main-container__content-boke-about-information-social
+        = link_to root_path do
+          %i.fa.fa-facebook.fa-2x
+      %span.main-container__content-boke-about-information-social
+        = link_to root_path do
+          %i.fa.fa-twitter.fa-2x
+      %span.main-container__content-boke-about-information-social
+        = link_to root_path do
+          %i.fa.fa-warning.fa-2x
+      %span.main-container__content-boke-about-information-social
+        = link_to root_path do
+          %i.fa.fa-external-link.fa-2x

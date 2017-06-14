@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610104139) do
+ActiveRecord::Schema.define(version: 20170613100416) do
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "body",       null: false
     t.integer  "user_id",    null: false
-    t.integer  "odai_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "odai_id"
     t.index ["body"], name: "index_bokes_on_body", using: :btree
   end
 
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20170610104139) do
   create_table "odais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image",      null: false
     t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rensou_bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "body",       null: false
+    t.integer  "user_id"
+    t.integer  "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

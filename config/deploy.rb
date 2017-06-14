@@ -2,9 +2,12 @@
 lock "3.8.1"
 
 set :application, "bokete2"
-set :repo_url, "git@github.com:/rokilokiroki/bokete2.git"
+set :repo_url, "git@github.com:rokilokiroki/bokete2.git"
+set :branch, 'master'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+
+set :linked_files, %w{ config/secrets.yml }
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
@@ -22,11 +25,13 @@ namespace :deploy do
   end
 end
 
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/var/www/bokete2"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

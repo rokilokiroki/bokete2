@@ -10,5 +10,5 @@
               %img{:alt => "", :src => "#{@odai.image.url}"}
               = form_for [@odai, @bokete] do |f|
                 = f.label :ボケテキスト
-                = f.text_area :body, placeholder: "グループ名を入力してください"
+                = f.text_area :body, placeholder: "ボケテキストを入力してください"
                 = f.submit
