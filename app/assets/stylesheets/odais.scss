@@ -60,6 +60,18 @@
     }
 }
 
+.main-container__content-boke_photo-content-odais {
+    img {
+        width: 155px;
+        margin: 10px;
+    }
+}
+
+.odai-hukusu-list.kakusu {
+    textarea {}
+    input {}
+}
+
 .clearfix {
     @include clearfix();
 }

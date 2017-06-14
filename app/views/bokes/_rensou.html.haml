@@ -1,12 +1,11 @@
 .main-container__content-title
-  新着ボケ
+  新着連想ボケ
 .main-container__content-boke
   .main-container__content-boke_photo
     .main-container__content-boke_photo-content
-      - @rensou_cards.each do |odai|
-        = image_tag(odai.image)
-      .main-container__content-boke_photo-content-meta
-        %a{:href => "", :target => "_self"}投稿者
+      .main-container__content-boke_photo-content-odais
+        - @rensou_cards.each do |odai|
+          = image_tag(odai.image)
   %h3.main-container__content-boke_text
     = @rensou.body
   .main-container__content-boke-about

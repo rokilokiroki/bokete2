@@ -19,6 +19,6 @@
           = form_tag('/rensou_bokes', method: :post) do
             = render partial: "hukusu", collection: @hukusu_odais, as: :odai
             = hidden_field_tag 'hukusu_odais_ids', @hukusu_odais_ids
-            %textarea{:cols => "20", :name => "body", :placeholder => "ボケを入力して下さい", :rows => "10"}
+            %textarea{:cols => "20", :name => "body", :placeholder => "ボケを入力して下さい", :rows => "3"}
             / %input{:type => "hidden", :name => "user_id", :value => current_user.id}
             %input{:type => "submit", :value => "SENT"}
