@@ -25,7 +25,7 @@ class BokesController < ApplicationController
       @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
       @rensou = RensouBoke.last
         if @rensou == nil
-          render :template => "bokes/index"
+          redirect_to odais_path
         else
           @rensou_cards = @rensou.card.odais
         end

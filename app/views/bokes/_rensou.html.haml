@@ -4,6 +4,9 @@
   .main-container__content-boke_photo
     .main-container__content-boke_photo-content
       .main-container__content-boke_photo-content-odais
+      - if @rensou == nil
+        = redirect_to odais_path
+      - else
         - @rensou_cards.each do |odai|
           = image_tag(odai.image)
   %h3.main-container__content-boke_text
