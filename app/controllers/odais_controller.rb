@@ -21,7 +21,7 @@ class OdaisController < ApplicationController
   end
 
   def odai_params
-    # params.require(:odai).permit(:image)
+    params.require(:odai).permit(:image)
   end
 
 end
