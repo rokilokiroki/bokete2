@@ -1,12 +1,12 @@
 class BokesController < ApplicationController
   def index
+
     hash = {}
     Boke.all.each do |boke|
       boke_id = boke.id
       average = boke.comments.average(:rate).to_i
       hash["#{boke_id}"] = average
     end
-
     bokes = Hash[ hash.sort_by{ |_, v| -v }]
 
     if bokes == {}
@@ -24,7 +24,11 @@ class BokesController < ApplicationController
       @rates = rates.map { |id| Boke.find(id) }
       @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
       @rensou = RensouBoke.last
-      @rensou_cards = @rensou.card.odais
+        if @rensou == nil
+          render :template => "bokes/index"
+        else
+          @rensou_cards = @rensou.card.odais
+        end
     end
   end
 
