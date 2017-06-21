@@ -4,10 +4,7 @@
   .photo-meta
     = link_to root_path do
       %span.fa.fa-camera{:title => "photo by"}
-        音信不通
-    = link_to root_path do
-      %span.fa.fa-picture-o{:title => "odai by"}
-        音信不通
+        #{boke.user.name}
   .photo-text
     = boke.body
   .rating

@@ -3,11 +3,8 @@
     = image_tag rate.odai.image
   .photo-meta
     = link_to root_path do
-      %span.fa.fa-camera{:title => "photo by"}
-        音信不通
-    = link_to root_path do
-      %span.fa.fa-picture-o{:title => "odai by"}
-        音信不通
+      %span.fa.fa-camera{:title => "odai by"}
+      #{rate.odai.user.name}
   .photo-text
     = rate.body
   .rating

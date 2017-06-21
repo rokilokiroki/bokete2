@@ -5,7 +5,7 @@
     .main-container__content-boke_photo-content
       = image_tag(@new_odai.image)
       .main-container__content-boke_photo-content-meta
-        %a{:href => "", :target => "_self"}投稿者
+        %a{:href => "", :target => "_self"}投稿者 #{@new_odai.user.name}
   %h3.main-container__content-boke_text
     = @new_boke.body
   .main-container__content-boke-about

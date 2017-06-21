@@ -1,6 +1,5 @@
 class BokesController < ApplicationController
   def index
-
     hash = {}
     Boke.all.each do |boke|
       boke_id = boke.id
