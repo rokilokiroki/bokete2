@@ -11,14 +11,14 @@
   .main-container__content-boke-about
     .main-container__content-boke-about-information
       .main-container__content-boke-about-information-boke-stars
-      - if @new_star >= 1
-        = link_to root_path do
-          %i.fa.fa-star
-            #{@new_star}
-      - else
-        = link_to root_path do
-          %i.fa.fa-star
-            0
+        - if @new_star >= 1
+          = link_to root_path do
+            %i.fa.fa-star
+              #{@new_star}
+        - else
+          = link_to root_path do
+            %i.fa.fa-star
+              0
       .main-container__content-boke-about-information-label
         %a.time_ago
           = time_ago_in_words(@new_boke.created_at)
