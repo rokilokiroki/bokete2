@@ -22,6 +22,7 @@ class BokesController < ApplicationController
       rates =  Comment.group(:boke_id).order('count_rate DESC').limit(3).count(:rate).keys
       @rates = rates.map { |id| Boke.find(id) }
       @new_bokes = Boke.includes(:odai).order("created_at DESC").limit(3)
+      @comments = @boke.comments.includes(:user)
       @rensou = RensouBoke.last
         if @rensou == nil
           redirect_to odais_path

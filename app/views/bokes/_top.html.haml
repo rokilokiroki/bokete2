@@ -7,7 +7,7 @@
       .main-container__content-boke_photo-content-meta
         %a{:href => "", :target => "_self"}投稿者 #{@odai.user.name}
   %h3.main-container__content-boke_text
-    = @boke.body
+    #{@boke.body}
   .main-container__content-boke-about
     .main-container__content-boke-about-information
       .main-container__content-boke-about-information-boke-stars
@@ -31,7 +31,7 @@
           %i.fa.fa-external-link.fa-2x
     .main-container__content-boke-about-information2
       %span.main-container__content-boke-about-information2-rate-element
-        = form_tag("/odais/#{@odai.id}/bokes/#{@boke.id}/comments", method: :post) do
+        = form_tag("/odais/#{@odai.id}/bokes/#{@boke.id}/comments", method: :post, class: "boke_comment") do
           .evaluation
             %input#star1{:name => "rate", :type => "radio", :value => "5"}/
             %label.top{:for => "star1"}
@@ -55,6 +55,13 @@
               ★
           %textarea{:class => "boke_text", :cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
           %input#button{:type => "submit", :value => "SENT"}/
+        .boke_comments
+          - if @comments
+            - @comments.each do |comment|
+              %p
+                =comment.user.name
+              %p
+                =comment.text
 .main-container__content-attention.clearfix
   .main-container__content-title
     注目ボケ
